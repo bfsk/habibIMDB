@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TopContentComponent } from './top-content/top-content.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AllMoviesComponent } from './all-movies/all-movies.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TopContentComponent
+    TopContentComponent,
+    AllMoviesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

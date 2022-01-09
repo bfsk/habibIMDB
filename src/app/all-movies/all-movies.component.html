@@ -1,0 +1,12 @@
+<div routerLink="/home" style="cursor: pointer; background-color: beige;" >Go Home</div>
+<div *ngFor="let content of topContents;" class="col-3">
+    <app-top-content [topContent]="content"></app-top-content>
+    <div style="margin-top: 20px; cursor: pointer; background-color: rgb(22, 122, 189);" (click) = "vote(content.id)">
+        Vote!
+    </div>
+</div>
+<div class = "row" style="margin-top: 20px; cursor: pointer; background-color: rgb(218, 218, 51);">
+    <div *ngIf="this.topContents.length % 10 == 0" (click) = "loadMoreData()" style="background-color: aquamarine; margin:auto" class="col-3">
+      Show more
+    </div>
+</div>

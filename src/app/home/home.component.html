@@ -1,0 +1,21 @@
+
+<div class = "header">
+    <div routerLink="allMovies" style="cursor: pointer; background-color: beige;" >Show all movies</div>
+    <p>Search movies/TV shows: </p>
+    <input type="text" [formControl]="searchControl" placeholder="search">
+    <label class="switch" (change)="loadData(query, type, 0)">
+      <input type="checkbox" [(ngModel)]="type">
+      Movies/TVshows switch
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <div class = "row" style="align-items: center; justify-content: center;">
+      <div *ngFor="let content of topContents;" class="col-3">
+        <app-top-content [topContent]="content"></app-top-content>
+      </div>
+  </div>
+  <div class = "row" style="cursor: pointer">
+    <div *ngIf="this.topContents.length % 10 == 0" (click) = "loadMoreData()" style="background-color: aquamarine; margin:auto" class="col-3">
+      Show more
+    </div>
+  </div>
