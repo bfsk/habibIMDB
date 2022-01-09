@@ -1,6 +1,7 @@
-<p>
-testsdadasdasd
-</p>
+<div class = "header">
+  <p>Search movies/TV shows: </p>
+  <input type="text" [formControl]="searchControl" placeholder="search">>
+</div>
 
 <div *ngFor="let content of topContents;" class="contentContainer">
   <app-top-content [topContent]="content"></app-top-content>

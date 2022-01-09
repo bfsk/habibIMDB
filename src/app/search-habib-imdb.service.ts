@@ -10,7 +10,6 @@ export class SearchHabibIMDBService {
   searchDBAPI = 'searchContent';
   voteAPI = 'vote';
   //https://localhost:44364/api/imdb/searchContent?query=3 stars&contentType=false&page=0
-
   constructor(private _http: HttpClient) { }
   searchContent(query, contentType, page) {
     return this._http.get<TopContent[]>(this.serviceBaseURL + this.searchDBAPI + "?query="+query + "&contentType="+contentType + "&page="+page);
