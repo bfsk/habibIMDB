@@ -1,6 +1,11 @@
 <div class = "header">
   <p>Search movies/TV shows: </p>
-  <input type="text" [formControl]="searchControl" placeholder="search">>
+  <input type="text" [formControl]="searchControl" placeholder="search">
+  <label class="switch" (change)="loadData(query, type, 0)">
+    <input type="checkbox" [(ngModel)]="type">
+    Movies/TVshows switch
+    <span class="slider round"></span>
+  </label>
 </div>
 
 <div *ngFor="let content of topContents;" class="contentContainer">
