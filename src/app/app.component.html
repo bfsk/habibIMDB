@@ -1,3 +1,4 @@
+
 <div class = "header">
   <p>Search movies/TV shows: </p>
   <input type="text" [formControl]="searchControl" placeholder="search">
@@ -7,10 +8,13 @@
     <span class="slider round"></span>
   </label>
 </div>
-
-<div *ngFor="let content of topContents;" class="contentContainer">
-  <app-top-content [topContent]="content"></app-top-content>
+<div class = "row" style="align-items: center; justify-content: center;">
+    <div *ngFor="let content of topContents;" class="col-3">
+      <app-top-content [topContent]="content"></app-top-content>
+    </div>
 </div>
-<div *ngIf="this.topContents.length % 10 == 0" (click) = "loadMoreData()">
-  Show more
+<div class = "row">
+  <div *ngIf="this.topContents.length % 10 == 0" (click) = "loadMoreData()" style="background-color: aquamarine; margin:auto" class="col-3">
+    Show more
+  </div>
 </div>

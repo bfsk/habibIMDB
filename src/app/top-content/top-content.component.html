@@ -1,7 +1,14 @@
-<div class = "container">
-    <h1>
+<div id = "{{topContent.id}}" class = "container">
+    <h1 style="width: 100%; text-align: center;">
         {{topContent.title}}
     </h1>
-
+    <p>Description: {{topContent.description}}</p>
+    <p>Released: {{topContent.release.toString().split('T')[0]}}</p>
+    <p>Actors:</p>
+    <div *ngFor = "let actor of topContent.actors;" style="margin-left: 20px;">
+        <p>Name: {{actor.name}}</p>
+        <p>Last name: {{actor.lastName}}</p>
+    </div>
+    <div>Score: {{topContent.score}}</div>   
 </div>
 
